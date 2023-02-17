@@ -29,8 +29,9 @@ streamlit.write('The user entered ', fruit_choice)
 import requests
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
 
-
 # normalizes the response from the json 
 fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
 # displays it to the page
 streamlit.dataframe(fruityvice_normalized)
+
+import snowflake.connector
